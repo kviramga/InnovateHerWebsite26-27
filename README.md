@@ -1,177 +1,47 @@
-# InnovateHer Website
+# InnovateHer 2027 website
 
-A collaborative React-based website for InnovateHer, empowering women in innovation and technology.
-
-## Project Structure
+Static site (plain HTML, CSS and JavaScript). No build step, no dependencies.
 
 ```
-src/
-├── components/          # Individual section components
-│   ├── TitleCard.jsx   # Hero section
-│   ├── About.jsx       # About section
-│   ├── Tracks.jsx      # Tracks section
-│   ├── ExecBoard.jsx   # Executive board section
-│   ├── FAQ.jsx         # FAQ section
-│   ├── Teams.jsx       # Teams section
-│   └── Sponsors.jsx    # Sponsors section
-├── App.jsx             # Main app component
-├── App.css             # App styles
-├── main.jsx            # React entry point
-└── index.css           # Global styles
-index.html             # HTML entry point
-package.json           # Project dependencies
-vite.config.js         # Vite configuration
+index.html          all page content (sections, text, links)
+css/styles.css      colors, layout, animations
+js/main.js          countdown, FAQ accordion, scroll route + elephant
+assets/             elephant-front.png, elephant-side.png, logo.jpg
+.nojekyll           tells GitHub Pages to serve the files as-is
 ```
 
-## Tech Stack
+## Put it live with GitHub Pages
 
-- **React 18** - UI library
-- **Vite** - Build tool
-- **CSS** - Styling
-- **JavaScript** - Interactivity
+1. Create a new repository on GitHub (e.g. `innovateher-site`).
+2. Upload everything in this folder to the **root** of the repo
+   (`index.html` must be at the top level, not inside another folder).
+   Make sure the hidden `.nojekyll` file comes along, though the site still works without it.
+3. In the repo go to **Settings → Pages**.
+4. Under **Build and deployment**, set **Source: Deploy from a branch**,
+   **Branch: main**, **Folder: / (root)**, then **Save**.
+5. After a minute or two the site is live at
+   `https://<your-username-or-org>.github.io/<repo-name>/`.
 
-## Getting Started
+### Using innovateherhacks.org
+In **Settings → Pages → Custom domain** enter your domain, then add the DNS records
+GitHub lists (an `A`/`ALIAS` record for the root domain, or a `CNAME` for `www`).
+Tick **Enforce HTTPS** once it's available.
 
-### Prerequisites
+## Where to edit things
 
-- Node.js (v14 or higher)
-- npm or yarn
+| What | File | Look for |
+|---|---|---|
+| Hackathon date/time for the countdown | `js/main.js` | `HACKATHON_START` (top of file) |
+| Date text on the title card | `index.html` | `Takeoff is` |
+| Application links | `index.html` | the three `<a class="app" ...>`: replace `href="#"` with the form URL and delete the `data-soon="..."` attribute |
+| Tracks | `index.html` | `<article class="ticket"` |
+| Exec board names/roles | `index.html` | `<figure class="polaroid"` (to add photos, replace the elephant `<div class="ele-front">` with `<img src="assets/name.jpg" alt="Name">`) |
+| FAQs | `index.html` | `<div class="faq">`; anything in [brackets] still needs your details |
+| Teams | `index.html` | `<article class="team stamp` |
+| Sponsor tiers / logos | `index.html` | `<article class="tier"` and `<div class="logos">` |
+| Colors | `css/styles.css` | the variables at the top (`--navy`, `--rose`, `--page`, ...) |
+| Social links | `index.html` | the `<footer>` |
 
-### Installation
+Fonts (Fraunces and Inter) load from Google Fonts, so the site needs an internet connection to look exactly right.
 
-1. Navigate to the project directory:
-   ```bash
-   cd InnovateHerWebsite26-27
-   ```
-
-2. Pull the latest changes from main:
-   ```bash
-   git pull origin main
-   ```
-
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-   The website will open automatically at `http://localhost:3000`
-
-5. Build for production:
-   ```bash
-   npm run build
-   ```
-
-## Contributing
-
-We follow a collaborative branching workflow. Each team member works on their assigned section on a separate branch.
-
-### Branching Strategy
-
-1. **Create a feature branch** for your section:
-   ```bash
-   git checkout -b feature/section-name
-   ```
-   
-   Example branch names:
-   - `feature/titlecard`
-   - `feature/about`
-   - `feature/tracks`
-   - `feature/exec-board`
-   - `feature/faq`
-   - `feature/teams`
-   - `feature/sponsors`
-
-2. **Make your changes** to the component and its CSS file in the `src/components/` directory
-
-3. **Commit your changes** with clear commit messages:
-   ```bash
-   git add .
-   git commit -m "Add/Update [Section Name] component"
-   ```
-
-4. **Push to your branch**:
-   ```bash
-   git push origin feature/section-name
-   ```
-
-5. **Create a Pull Request**:
-   - Go to GitHub and create a PR from your feature branch to `main`
-   - Add a clear description of your changes
-   - Request review from the project maintainer
-
-6. **Wait for approval** and merge to `main`
-
-### Component Guidelines
-
-Each section is a React component located in `src/components/`:
-
-- **Component File**: `SectionName.jsx`
-- **Styles File**: `SectionName.css`
-- **Export**: Default export of the component
-
-Example structure:
-```jsx
-import React from 'react'
-import './SectionName.css'
-
-function SectionName() {
-  return (
-    <section className="section-name">
-      {/* Your content here */}
-    </section>
-  )
-}
-
-export default SectionName
-```
-
-### Styling
-
-- Each component has its own CSS file for scoped styling
-- Use class names that match the component name
-- Follow the existing color scheme: `#667eea` (purple), `#764ba2` (darker purple)
-- Ensure responsive design using media queries
-
-### Color Palette
-
-- Primary: `#667eea` (Purple)
-- Secondary: `#764ba2` (Dark Purple)
-- Light Background: `#f9f9f9`
-- Text: `#333` (Dark Gray)
-- Muted Text: `#666` (Medium Gray)
-
-## Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-
-## Code Review Process
-
-1. All PRs must be reviewed before merging
-2. Ensure your code follows the existing style and patterns
-3. Test your changes thoroughly in the development environment
-4. Update the README if you make structural changes
-
-## Deployment
-
-Once all sections are complete and merged to `main`, the website can be deployed by running:
-```bash
-npm run build
-```
-
-The build output will be in the `dist/` directory.
-
-## License
-
-See the [LICENSE](LICENSE) file for details.
-
-## Questions?
-
-Feel free to reach out to the project maintainer for any questions or clarifications about the project structure or workflow.
+To preview locally, open `index.html` in a browser, or run `python3 -m http.server` in this folder and visit http://localhost:8000.
