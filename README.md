@@ -34,13 +34,14 @@ Tick **Enforce HTTPS** once it's available.
 | Hackathon date/time for the countdown | `js/main.js` | `HACKATHON_START` (top of file) |
 | Date text on the title card | `index.html` | `Takeoff is` |
 | Application links | `index.html` | the three `<a class="app" ...>`: replace `href="#"` with the form URL and delete the `data-soon="..."` attribute |
-| Tracks | `index.html` | `<article class="ticket"` |
+| Tracks | `index.html` | `<article class="ticket"` (name in the `<h3>`, description in the `<p>`) |
 | Exec board names/roles | `index.html` | `<figure class="polaroid"` (to add photos, replace the elephant `<div class="ele-front">` with `<img src="assets/name.jpg" alt="Name">`) |
-| FAQs | `index.html` | `<div class="faq">`; anything in [brackets] still needs your details |
+| FAQs | `index.html` | `<div class="faq">` (question in the `<span>`, answer in the `<p>`) |
 | Teams | `index.html` | `<article class="team stamp` |
-| Sponsor tiers / logos | `index.html` | `<article class="tier"` and `<div class="logos">` |
+| Sponsor logos | `index.html` | `<div class="logos">` (replace a "Your logo here" box with `<a href="..."><img src="assets/logo-name.png" alt="Name"></a>`) |
+| MLH badge | `index.html` | `id="mlh-trust-badge"` (top of `<body>`). It loads from MLH's servers, so it only appears on the live site, not in offline previews |
 | Colors | `css/styles.css` | the variables at the top (`--navy`, `--rose`, `--page`, ...) |
-| Social links | `index.html` | the `<footer>` |
+| Social icons | `index.html` | `<ul class="social">` in the `<footer>` |
 
 Fonts (Fraunces and Inter) load from Google Fonts, so the site needs an internet connection to look exactly right.
 
