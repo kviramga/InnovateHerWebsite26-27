@@ -245,6 +245,7 @@ main{position:relative;z-index:2}
 .polaroid::before{content:"";position:absolute;top:-11px;left:50%;width:70px;height:22px;transform:translateX(-50%) rotate(-3deg);background:color-mix(in srgb,var(--yellow) 75%,transparent);border-left:2px dotted rgba(27,43,75,.2);border-right:2px dotted rgba(27,43,75,.2)}
 .polaroid .photo{aspect-ratio:1;display:grid;place-items:end center;overflow:hidden;background:var(--c,var(--sky))}
 .polaroid .photo .ele-front{width:74%;margin-bottom:-3%}
+.polaroid .photo img{display:block;width:100%;height:100%;object-fit:cover}
 .polaroid figcaption{padding-top:.8rem;text-align:center}
 .polaroid strong{display:block;font:800 1.15rem/1.15 var(--serif);color:#1B2B4B}
 .polaroid span{display:block;margin-top:.2rem;font:italic 500 .95rem/1.2 var(--serif);color:#7A3D59}
@@ -299,8 +300,10 @@ main{position:relative;z-index:2}
 .inkind svg{width:34px;height:34px;display:block;margin:0 auto .6rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .inkind small{display:block;margin-top:.35rem;font-weight:500;font-size:.8rem}
 @media (max-width:760px){.inkind{grid-template-columns:repeat(2,1fr)}}
-.logos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.logos div{aspect-ratio:16/9;display:grid;place-items:center;border:3px dashed color-mix(in srgb,var(--navy) 45%,transparent);border-radius:12px;color:var(--muted);font:italic 500 .95rem/1.2 var(--serif);text-align:center;padding:.5rem}
+.logos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.logo{min-width:0;min-height:132px;margin:0;padding:14px;display:grid;grid-template-rows:1fr auto;align-items:center;justify-items:center;gap:10px;background:var(--paper);border:1px solid color-mix(in srgb,var(--navy) 18%,transparent);border-radius:8px}
+.logo img{display:block;width:100%;height:76px;object-fit:contain}
+.logo figcaption{max-width:100%;font:600 .78rem/1.2 var(--sans);text-align:center;color:var(--muted)}
 @media (max-width:640px){.logos{grid-template-columns:repeat(2,1fr)}}
 .sponsor-cta{margin-top:3rem;padding:1.8rem;border-radius:20px;background:var(--navy);color:#FEF6E5;display:flex;align-items:center;justify-content:space-between;gap:1.2rem;flex-wrap:wrap}
 .sponsor-cta h3{color:#FEF6E5;font-size:1.5rem;max-width:22ch}
