@@ -19,8 +19,7 @@
     themeSubtitle.hidden=false;
     themeReveal.classList.add('is-revealed');
     themeButton.setAttribute('aria-expanded','true');
-    themeButton.textContent='Theme revealed';
-    themeButton.disabled=true;
+    themeButton.hidden=true;
   });
 
   /* ---------- team carousel ---------- */

@@ -195,31 +195,41 @@
     <div class="stop right">
       <svg class="art" viewBox="0 0 160 190" aria-hidden="true">
         <rect class="ground" x="6" y="178" width="148" height="8" rx="4"/>
-        <path d="M18 178V92h36v86M62 178V50h38v128M108 178V78h34v100" fill="#577FAE" stroke="#263F73" stroke-width="3"/>
-        <path d="M72 50V32h18v18M27 108h9m8 0h3m-20 18h9m8 0h3m-20 18h9m8 0h3M72 68h8m10 0h4M72 88h8m10 0h4M72 108h8m10 0h4M72 128h8m10 0h4M72 148h8m10 0h4m12-54h10m9 0h5m-34 20h10m9 0h5m-34 20h10m9 0h5m-34 20h10m9 0h5" stroke="#F4CE3E" stroke-width="4"/>
+        <rect x="14" y="168" width="132" height="12" fill="#F8C9B5"/><rect x="28" y="158" width="104" height="12" fill="#F4E1D2"/><rect x="42" y="148" width="76" height="12" fill="#F8C9B5"/>
+        <rect x="56" y="114" width="48" height="36" fill="#E9735D"/><rect x="62" y="82" width="36" height="34" fill="#E9735D"/><rect x="68" y="56" width="24" height="30" fill="#E9735D"/>
+        <rect x="72" y="126" width="16" height="24" rx="8" fill="#B05A7A"/>
+        <path d="M28 120Q80 100 132 120L118 130H42zM40 90Q80 72 120 90L108 99H52zM52 62Q80 48 108 62L100 70H60z" fill="#F4CE3E" stroke="#C9A400" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M80 50V30" stroke="#C9A400" stroke-width="3"/><circle cx="80" cy="27" r="5" fill="#E9735D"/>
       </svg>
       <div class="stop-tag">Stop 2<span>Beijing</span></div>
     </div>
     <div class="sec-head">
       <h2 id="theme-h">Our theme</h2>
-      <p>A city is a thousand ideas sharing the same skyline.</p>
     </div>
     <div class="theme-reveal" id="themeReveal">
-      <svg class="city-scene" viewBox="0 0 1200 480" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-        <defs><linearGradient id="citySky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#263F73"/><stop offset="1" stop-color="#577FAE"/></linearGradient></defs>
-        <path class="city-sky" d="M0 0h1200v480H0z" fill="url(#citySky)"/>
-        <circle cx="920" cy="92" r="44" fill="#F4CE3E" opacity=".8"/>
-        <path d="M0 365V224h104v141h35V172h126v193h38V238h94v127h35V112h151v253h30V198h107v167h34V148h126v217h38V233h91v132h32V192h79v173H0z" fill="#1B2B4B"/>
-        <path d="M0 364h1200v116H0z" fill="#15213C"/>
-        <g class="ferris-wheel" fill="none" stroke="#F4CE3E" stroke-width="5">
-          <circle cx="1030" cy="270" r="78"/><circle cx="1030" cy="270" r="7" fill="#F4CE3E"/>
-          <path d="M1030 192v156m-78-78h156m-133-55 110 110m0-110L975 325M1000 342l-20 22m70-22 20 22"/>
-          <circle cx="1030" cy="192" r="6" fill="#E9735D"/><circle cx="1085" cy="215" r="6" fill="#E9735D"/><circle cx="1108" cy="270" r="6" fill="#E9735D"/><circle cx="1085" cy="325" r="6" fill="#E9735D"/><circle cx="1030" cy="348" r="6" fill="#E9735D"/><circle cx="975" cy="325" r="6" fill="#E9735D"/><circle cx="952" cy="270" r="6" fill="#E9735D"/><circle cx="975" cy="215" r="6" fill="#E9735D"/>
+      <svg class="city-scene" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="citySky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#111C36"/><stop offset=".58" stop-color="#263F73"/><stop offset="1" stop-color="#B05A7A"/></linearGradient>
+          <linearGradient id="cityRiver" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#577FAE" stop-opacity=".8"/><stop offset="1" stop-color="#111C36"/></linearGradient>
+        </defs>
+        <path d="M0 0h1200v520H0z" fill="url(#citySky)"/>
+        <g fill="#FEF6E5" opacity=".75"><circle cx="102" cy="64" r="2"/><circle cx="235" cy="106" r="2"/><circle cx="408" cy="56" r="2"/><circle cx="570" cy="95" r="2"/><circle cx="764" cy="52" r="2"/><circle cx="1104" cy="82" r="2"/><circle cx="964" cy="126" r="2"/></g>
+        <circle cx="842" cy="134" r="45" fill="#F4CE3E" opacity=".88"/>
+        <path d="M0 356 55 320h56v36h42V258h86v98h30V292h66v64h43V218h82v138h33V274h71v82h44V188h91v168h37V240h75v116h45V280h77v76h42V226h91v130h40v-96h68v96h48v164H0z" fill="#33496E" opacity=".8"/>
+        <g fill="#1B2B4B">
+          <path d="M0 382V310h58v72zM64 382V270h58v112zM128 382V228h76v154zM212 382V296h54v86zM274 382V246h67v136zM349 382V184h80v198zM437 382V278h66v104zM511 382V216h87v166zM606 382V164h82v218zM696 382V248h63v134zM767 382V204h82v178zM857 382V270h64v112zM929 382V226h79v156zM1016 382V184h83v198zM1107 382V256h93v126z"/>
+          <path d="M360 184h58v-30h-12v-20h-34v20h-12zM622 164h49v-24h-10v-24h-29v24h-10zM1030 184h54v-22h-11v-21h-32v21h-11z"/>
         </g>
         <g class="city-lights" fill="#F4CE3E">
-          <path d="M24 247h14v21H24zm34 0h14v21H58zm34 0h14v21H92zm63-36h16v23h-16zm39 0h16v23h-16zm39 0h16v23h-16zm84 48h14v21h-14zm34 0h14v21h-14zm34 0h14v21h-14zm78-124h17v24h-17zm41 0h17v24h-17zm41 0h17v24h-17zm-99 47h17v24h-17zm41 0h17v24h-17zm41 0h17v24h-17zm-82 48h17v24h-17zm41 0h17v24h-17zm41 0h17v24h-17zm124-13h14v21h-14zm34 0h14v21h-14zm34 0h14v21h-14zm62-54h16v24h-16zm40 0h16v24h-16zm40 0h16v24h-16zm-96 48h16v24h-16zm40 0h16v24h-16zm40 0h16v24h-16zm94 38h14v21h-14zm34 0h14v21h-14zm34 0h14v21h-14zm-98 45h14v21h-14zm34 0h14v21h-14zm34 0h14v21h-14z"/>
+          <path d="M76 290h10v16H76zm23 0h10v16H99zm-23 32h10v16H76zm83-78h11v18h-11zm27 0h11v18h-11zm-27 34h11v18h-11zm-27 36h11v18h-11zm78 0h11v18h-11zm51-3h10v16h-10zm24 0h10v16h-10zm48-26h11v18h-11zm26 0h11v18h-11zm-26 34h11v18h-11zm87-102h12v19h-12zm29 0h12v19h-12zm-29 36h12v19h-12zm-29 41h12v19h-12zm74 0h12v19h-12zm48-45h12v19h-12zm29 0h12v19h-12zm-29 36h12v19h-12zm82-78h12v19h-12zm29 0h12v19h-12zm-29 37h12v19h-12zm-29 38h12v19h-12zm92 35h11v18h-11zm26 0h11v18h-11zm-26 33h11v18h-11zm72-112h12v19h-12zm29 0h12v19h-12zm-29 37h12v19h-12zm-28 37h12v19h-12zm85-43h12v19h-12zm29 0h12v19h-12zm-29 37h12v19h-12zm-29 37h12v19h-12zm86-82h12v19h-12zm29 0h12v19h-12zm-29 37h12v19h-12z"/>
         </g>
-        <path d="M520 480q80-110 160 0m-94 0q42-58 84 0" fill="none" stroke="#E4B9C7" stroke-width="4" stroke-dasharray="2 13" opacity=".8"/>
+        <g class="ferris-wheel" fill="none" stroke="#F4CE3E" stroke-width="4">
+          <circle cx="168" cy="286" r="91"/><circle cx="168" cy="286" r="8" fill="#F4CE3E"/>
+          <path d="M168 195v182m-91-91h182m-155-64 128 128m0-128L104 350M128 365l-25 34m105-34 25 34"/>
+          <circle cx="168" cy="195" r="8" fill="#E9735D"/><circle cx="232" cy="221" r="8" fill="#E9735D"/><circle cx="259" cy="286" r="8" fill="#E9735D"/><circle cx="232" cy="351" r="8" fill="#E9735D"/><circle cx="168" cy="377" r="8" fill="#E9735D"/><circle cx="104" cy="351" r="8" fill="#E9735D"/><circle cx="77" cy="286" r="8" fill="#E9735D"/><circle cx="104" cy="221" r="8" fill="#E9735D"/>
+        </g>
+        <path d="M0 382h1200v138H0z" fill="url(#cityRiver)"/>
+        <g fill="none" stroke="#E4B9C7" stroke-width="3" opacity=".55"><path d="M0 414h1200M0 450h1200M0 486h1200" stroke-dasharray="2 18"/><path d="M350 382 180 520m330-138L430 520m280-138-36 138m206-138 64 138m129-138 162 138" opacity=".4"/></g>
       </svg>
       <p class="theme-eyebrow">InnovateHer 2027 theme</p>
       <h3 id="themeTitle" hidden>Cities</h3>
@@ -383,7 +393,6 @@
 
     <div class="sec-head">
       <h2 id="apply-h">Applications</h2>
-      <p>Your ticket to InnovateHer 2027 is one form away. Pick the one that fits.</p>
     </div>
 
     <div class="pass">

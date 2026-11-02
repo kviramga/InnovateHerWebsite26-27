@@ -239,7 +239,7 @@ main{position:relative;z-index:2}
 .theme-reveal::after{position:absolute;z-index:0;inset:0;content:"";background:linear-gradient(180deg,rgba(15,27,51,.93) 0%,rgba(15,27,51,.78) 46%,rgba(15,27,51,.12) 100%);pointer-events:none}
 .city-scene{position:absolute;z-index:-1;inset:0;width:100%;height:100%;opacity:.48;transition:opacity .8s ease}
 .theme-reveal.is-revealed .city-scene{opacity:1}
-.ferris-wheel{transform-box:view-box;transform-origin:1030px 270px;animation:ferris-spin 32s linear infinite}
+.ferris-wheel{transform-box:view-box;transform-origin:168px 286px;animation:ferris-spin 32s linear infinite}
 @keyframes ferris-spin{to{transform:rotate(360deg)}}
 .city-lights{opacity:.08;transition:opacity 1s ease .2s}
 .theme-reveal.is-revealed .city-lights{opacity:1;animation:city-glow 2.8s ease-in-out infinite alternate}
@@ -250,6 +250,7 @@ main{position:relative;z-index:2}
 .theme-subtitle{font:italic 500 1.25rem/1.35 var(--serif);color:#FEF6E5}
 .theme-button{cursor:pointer;margin-top:.35rem;padding:.85rem 1.35rem;border:2px solid var(--yellow);border-radius:999px;background:var(--yellow);color:#1B2B4B;font:700 .95rem/1 var(--sans);transition:transform .2s,background .2s}
 .theme-button:hover{transform:translateY(-3px);background:#F8D95E}
+.theme-button[hidden]{display:none}
 .theme-button:disabled{cursor:default}
 .theme-reveal.is-revealed h3{animation:theme-in .9s cubic-bezier(.2,1.2,.4,1) both}
 @keyframes theme-in{0%{opacity:0;transform:translateY(32px) scale(.8);filter:blur(8px)}75%{filter:blur(0)}100%{opacity:1;transform:none}}
@@ -295,7 +296,7 @@ main{position:relative;z-index:2}
 .team-group-title-next{margin-top:3.4rem}
 .team-photo-wrap{padding:0 20px}
 .team-carousel{position:relative;left:50%;transform:translateX(-50%);width:min(1200px,calc(100vw - 48px));display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:12px;padding:16px;border:2px solid color-mix(in srgb,var(--navy) 22%,transparent);border-radius:12px;background:var(--paper)}
-.team-carousel-track{min-width:0;display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 18px)/2);gap:18px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scrollbar-color:var(--rose) transparent;scrollbar-width:thin}
+.team-carousel-track{min-width:0;display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:18px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scrollbar-color:var(--rose) transparent;scrollbar-width:thin}
 .team.stamp.team-card{min-width:0;margin:0;padding:24px 18px 20px;display:flex;flex-direction:column;align-items:center;gap:0;scroll-snap-align:start}
 .team .ico{width:52px;height:52px;flex:none;border-radius:50%;background:#FEF6E5;display:grid;place-items:center;margin-bottom:.75rem;border:2.5px solid currentColor}
 .team .ico svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -308,8 +309,8 @@ main{position:relative;z-index:2}
 .carousel-control:hover{transform:scale(1.06);background:var(--yellow)}
 .carousel-control svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 .carousel-control:disabled{opacity:.35;cursor:default;transform:none}
-@media (max-width:760px){.theme-reveal h3{font-size:3.4rem}.team-carousel{grid-template-columns:34px minmax(0,1fr) 34px;gap:8px;padding:10px}.team-carousel-track{grid-auto-columns:calc((100% - 12px)/1.15);gap:12px}.carousel-control{width:34px;height:34px}.team.stamp.team-card{padding:20px 12px 16px}.team .ico{width:44px;height:44px}.team .ico svg{width:22px;height:22px}}
-@media (max-width:420px){.team-carousel{grid-template-columns:30px minmax(0,1fr) 30px;padding:8px}.team-carousel-track{grid-auto-columns:88%;gap:10px}.carousel-control{width:30px;height:30px}}
+@media (max-width:760px){.theme-reveal h3{font-size:3.4rem}.team-carousel{grid-template-columns:34px minmax(0,1fr) 34px;gap:8px;padding:10px}.carousel-control{width:34px;height:34px}.team.stamp.team-card{padding:20px 12px 16px}.team .ico{width:44px;height:44px}.team .ico svg{width:22px;height:22px}}
+@media (max-width:420px){.team-carousel{grid-template-columns:30px minmax(0,1fr) 30px;padding:8px}.carousel-control{width:30px;height:30px}}
 
 /* ---------- sponsors ---------- */
 .why{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
