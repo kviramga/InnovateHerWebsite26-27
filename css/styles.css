@@ -272,18 +272,18 @@ main{position:relative;z-index:2}
 .polaroid .photo{aspect-ratio:4/5;display:block;place-items:end center;overflow:hidden;background:var(--c,var(--sky))}
 .polaroid .photo .ele-front{width:74%;margin-bottom:-3%}
 .polaroid .photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%;transform:translate(var(--face-shift-x,0),var(--face-shift-y,0)) scale(var(--face-zoom,1));transform-origin:center 30%}
-.polaroid:nth-child(1) .photo img{--face-zoom:1.3;--face-shift-x:10%;--face-shift-y:20%}
-.polaroid:nth-child(2) .photo img{--face-zoom:1.4;--face-shift-y:20%}
-.polaroid:nth-child(3) .photo img{--face-zoom:1;--face-shift-y:20%}
-.polaroid:nth-child(4) .photo img{--face-zoom:1.7;--face-shift-x:-5%;--face-shift-y:-5%;object-position:center 100%;transform-origin:center 62%}
+.polaroid:nth-child(1) .photo img{--face-zoom:1.3;--face-shift-x:5%}
+.polaroid:nth-child(2) .photo img{--face-zoom:1.4}
+.polaroid:nth-child(3) .photo img{--face-zoom:1}
+.polaroid:nth-child(4) .photo img{--face-zoom:1.7;--face-shift-x:5%;object-position:center 100%;transform-origin:center 62%}
 .polaroid:nth-child(5) .photo img{--face-zoom:1.65;--face-shift-x:25%;--face-shift-y:-5%}
 .polaroid:nth-child(6) .photo img{--face-zoom:1.35}
 .polaroid:nth-child(7) .photo img{--face-zoom:1.8;--face-shift-y:-20%}
-.polaroid:nth-child(8) .photo img{--face-zoom:1.7;--face-shift-y:-30%}
-.polaroid:nth-child(9) .photo img{--face-zoom:1.65;--face-shift-x:-5%;--face-shift-y:-10%}
+.polaroid:nth-child(8) .photo img{--face-zoom:1.5;--face-shift-x:5%;--face-shift-y:-30%}
+.polaroid:nth-child(9) .photo img{--face-zoom:1.65;--face-shift-x:15%;--face-shift-y:30%}
 .polaroid:nth-child(10) .photo img{--face-zoom:1.75;--face-shift-x:-5%;--face-shift-y:-10%}
 .polaroid:nth-child(11) .photo img{--face-zoom:1;--face-shift-x:-5%;--face-shift-y:-10%}
-.polaroid:nth-child(12) .photo img{--face-zoom:1.6}
+.polaroid:nth-child(12) .photo img{--face-zoom:1.7;--face-shift-y:-20%}
 .polaroid figcaption{padding-top:.8rem;text-align:center}
 .polaroid strong{display:block;font:800 1.15rem/1.15 var(--serif);color:#1B2B4B}
 .polaroid span{display:block;margin-top:.2rem;font:italic 500 .95rem/1.2 var(--serif);color:#7A3D59}
