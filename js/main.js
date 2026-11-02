@@ -131,7 +131,8 @@
     var secs=stopEls.map(function(s){
       var wr=s.closest('.wrap').getBoundingClientRect(), a=$('.art',s).getBoundingClientRect();
       var top=wr.top+window.scrollY-oy-6, bot=wr.bottom+window.scrollY-oy+eleH+12, pin=a.bottom+window.scrollY-oy-9;
-      return {el:s, x: desk ? a.left+a.width/2-ox : wr.left-ox+35, top:top, bot:Math.max(bot,pin+40), pin:pin};
+      var leftX=wr.left-ox+35, rightX=W-46;
+      return {el:s, x: desk ? a.left+a.width/2-ox : (s.classList.contains('right')?rightX:leftX), top:top, bot:Math.max(bot,pin+40), pin:pin};
     });
 
     var d='M'+sx+' '+sy, pen={x:sx,y:sy};
@@ -158,7 +159,7 @@
     secs.forEach(function(sec,i){
       ride(sec);
       var n=secs[i+1]; if(!n) return;
-      if(!desk){ cross(W-46,(pen.y+n.top)/2); }      /* phones: swing out to the right through the gap */
+      if(!desk){ cross(pen.x<W/2?W-46:46,(pen.y+n.top)/2); }
       cross(n.x, n.top);
     });
 
