@@ -295,7 +295,7 @@ main{position:relative;z-index:2}
 .team-group-title{margin:0 0 1.2rem;font:italic 600 1.5rem/1.2 var(--serif);color:var(--heading)}
 .team-group-title-next{margin-top:3.4rem}
 .team-photo-wrap{padding:0 20px}
-.team-carousel{position:relative;left:50%;transform:translateX(-50%);width:min(1000px,calc(100vw - 96px));display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:12px;padding:16px;border:2px solid color-mix(in srgb,var(--navy) 22%,transparent);border-radius:12px;background:var(--paper)}
+.team-carousel{position:relative;left:50%;transform:translateX(-50%);width:min(1000px,calc(100vw - 96px));display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:12px;padding:8px 0;border:0;background:transparent}
 .team-carousel-track{min-width:0;display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:18px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scrollbar-color:var(--rose) transparent;scrollbar-width:thin}
 .team.stamp.team-card{min-width:0;margin:0;padding:24px 18px 20px;display:flex;flex-direction:column;align-items:center;gap:0;scroll-snap-align:start}
 .team .ico{width:52px;height:52px;flex:none;border-radius:50%;background:#FEF6E5;display:grid;place-items:center;margin-bottom:.75rem;border:2.5px solid currentColor}
