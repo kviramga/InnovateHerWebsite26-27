@@ -130,9 +130,8 @@
     var secs=stopEls.map(function(s){
       var wr=s.closest('.wrap').getBoundingClientRect(), a=$('.art',s).getBoundingClientRect();
       var top=wr.top+window.scrollY-oy-6, bot=wr.bottom+window.scrollY-oy+eleH+12, pin=a.bottom+window.scrollY-oy-9;
-      var leftX=desk ? a.left+a.width/2-ox : (W<=760?52:84)-ele.offsetWidth/2;
-      var rightX=desk ? W-(a.left+a.width/2-ox) : W-((W<=760?52:84)+ele.offsetWidth/2);
-      return {el:s, x:s.classList.contains('left')?rightX:leftX, top:top, bot:Math.max(bot,pin+40), pin:pin};
+      var leftX=wr.left-ox+35, rightX=W-46;
+      return {el:s, x: desk ? a.left+a.width/2-ox : (s.classList.contains('right')?rightX:leftX), top:top, bot:Math.max(bot,pin+40), pin:pin};
     });
 
     var d='M'+sx+' '+sy, pen={x:sx,y:sy};
