@@ -12,6 +12,32 @@
   function say(msg){ toast.textContent=msg; toast.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(function(){toast.classList.remove('show')},2600); }
   $$('a[data-soon]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); say(a.getAttribute('data-soon')); }); });
 
+  /* ---------- theme reveal ---------- */
+  var themeButton=$('#themeButton'), themeTitle=$('#themeTitle'), themeReveal=$('#themeReveal');
+  themeButton.addEventListener('click',function(){
+    themeTitle.hidden=false;
+    themeReveal.classList.add('is-revealed');
+    themeButton.setAttribute('aria-expanded','true');
+    themeButton.textContent='Theme revealed';
+    themeButton.disabled=true;
+  });
+
+  /* ---------- team carousel ---------- */
+  var teamTrack=$('#teamTrack'), teamPrev=$('#teamPrev'), teamNext=$('#teamNext');
+  function updateTeamControls(){
+    teamPrev.disabled=teamTrack.scrollLeft<=2;
+    teamNext.disabled=teamTrack.scrollLeft+teamTrack.clientWidth>=teamTrack.scrollWidth-2;
+  }
+  function moveTeamCarousel(direction){
+    var card=$('.team-card',teamTrack), gap=parseFloat(getComputedStyle(teamTrack).gap)||0;
+    teamTrack.scrollBy({left:direction*(card.getBoundingClientRect().width+gap),behavior:reduce.matches?'auto':'smooth'});
+  }
+  teamPrev.addEventListener('click',function(){moveTeamCarousel(-1)});
+  teamNext.addEventListener('click',function(){moveTeamCarousel(1)});
+  teamTrack.addEventListener('scroll',updateTeamControls,{passive:true});
+  window.addEventListener('resize',updateTeamControls);
+  updateTeamControls();
+
   /* ---------- countdown ---------- */
   var T = new Date(HACKATHON_START).getTime();
   var cd = {d:$('#cd-d'),h:$('#cd-h'),m:$('#cd-m'),s:$('#cd-s')};

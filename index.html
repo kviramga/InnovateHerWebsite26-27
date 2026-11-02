@@ -24,10 +24,9 @@
     <button class="burger" aria-expanded="false" aria-controls="links" aria-label="Menu"><span></span></button>
     <ul class="links" id="links">
       <li><a href="#about">About</a></li>
-      <li><a href="#tracks">Tracks</a></li>
-      <li><a href="#exec">Exec board</a></li>
+      <li><a href="#theme">Theme</a></li>
+      <li><a href="#our-team">Our team</a></li>
       <li><a href="#faqs">FAQs</a></li>
-      <li><a href="#teams">Teams</a></li>
       <li><a href="#sponsors">Sponsors</a></li>
       <li><a class="apply" href="#apply">Apply</a></li>
     </ul>
@@ -138,7 +137,7 @@
   </div>
 </section>
 
-<!-- TRACKS · London -->
+<!-- ARCHIVED TRACKS START
 <section class="sec" id="tracks" aria-labelledby="tracks-h">
   <div class="wrap">
     <div class="stop right">
@@ -189,9 +188,23 @@
     </div>
   </div>
 </section>
+-->
 
-<!-- EXEC · Agra -->
-<section class="sec" id="exec" aria-labelledby="exec-h">
+<section class="sec theme-section" id="theme" aria-labelledby="theme-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="theme-h">Our theme</h2>
+      <p>A new world of ideas begins here.</p>
+    </div>
+    <div class="theme-reveal" id="themeReveal">
+      <p class="theme-eyebrow">InnovateHer 2027 presents</p>
+      <h3 id="themeTitle" hidden>A World of Possibility</h3>
+      <button class="theme-button" id="themeButton" type="button" aria-controls="themeTitle" aria-expanded="false">Reveal the theme</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="our-team" aria-labelledby="team-section-h">
   <div class="wrap">
     <div class="stop left">
       <svg class="art" viewBox="0 0 160 190" aria-hidden="true">
@@ -207,14 +220,15 @@
         <path d="M80 44V26" stroke="#B05A7A" stroke-width="3"/><circle cx="80" cy="24" r="4" fill="#B05A7A"/>
         <path d="M66 164V128Q80 106 94 128V164z" fill="#E9735D"/>
       </svg>
-      <div class="stop-tag">Stop 3<span>Agra</span></div>
+      <div class="stop-tag">Meet the crew</div>
     </div>
 
     <div class="sec-head">
-      <h2 id="exec-h">Exec board</h2>
+      <h2 id="team-section-h">Our team</h2>
       <p>Meet the team behind InnovateHer.</p>
     </div>
 
+    <h3 class="team-group-title">Exec board</h3>
     <div class="polaroids">
       <figure class="polaroid"><div class="photo" style="--c:var(--sky)"><img src="assets/exec%20pics/elina.jpeg" alt="Elina Shah"></div><figcaption><strong>Elina Shah</strong><span>President</span></figcaption></figure>
       <figure class="polaroid"><div class="photo" style="--c:var(--pink)"><img src="assets/exec%20pics/ramya.jpeg" alt="Ramya Rajaram"></div><figcaption><strong>Ramya Rajaram</strong><span>Vice President</span></figcaption></figure>
@@ -228,6 +242,21 @@
       <figure class="polaroid"><div class="photo" style="--c:#F5E1A0"><img src="assets/exec%20pics/khushi.jpeg" alt="Khushi Viramgami"></div><figcaption><strong>Khushi Viramgami</strong><span>Development Lead</span></figcaption></figure>
       <figure class="polaroid"><div class="photo" style="--c:var(--sky)"><img src="assets/exec%20pics/mayukha.jpg" alt="Mayukha Reddivari"></div><figcaption><strong>Mayukha Reddivari</strong><span>Marketing Co-Lead</span></figcaption></figure>
       <figure class="polaroid"><div class="photo" style="--c:var(--peach)"><img src="assets/exec%20pics/shreya.jpeg" alt="Shreya Gautam"></div><figcaption><strong>Shreya Gautam</strong><span>Marketing Co-Lead</span></figcaption></figure>
+    </div>
+    <h3 class="team-group-title team-group-title-next">Teams</h3>
+    <div class="team-carousel" aria-label="InnovateHer teams">
+      <button class="carousel-control" id="teamPrev" type="button" aria-label="Previous teams" title="Previous teams"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      <div class="team-carousel-track" id="teamTrack" tabindex="0" aria-label="Team cards">
+        <article class="team-card c-yellow"><div class="team-card-heading"><span class="team-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="m12 12 7-7"/></svg></span><h4>Strategy</h4></div><img src="assets/teams/strategy.JPG" alt="Strategy team" loading="lazy" decoding="async"></article>
+        <article class="team-card c-peach"><div class="team-card-heading"><span class="team-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span><h4>Design</h4></div><img src="assets/teams/design.JPG" alt="Design team" loading="lazy" decoding="async"></article>
+        <article class="team-card c-steel"><div class="team-card-heading"><span class="team-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 4l-4 16"/></svg></span><h4>Development</h4></div><img src="assets/teams/dev.JPG" alt="Development team" loading="lazy" decoding="async"></article>
+        <article class="team-card c-pink"><div class="team-card-heading"><span class="team-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg></span><h4>Logistics</h4></div><img src="assets/teams/logistics.JPG" alt="Logistics team" loading="lazy" decoding="async"></article>
+        <article class="team-card c-yellow"><div class="team-card-heading"><span class="team-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c0-1-1.3-2-3-2s-3 .8-3 2 1.3 1.8 3 2 3 .8 3 2-1.3 2-3 2-3-1-3-2M12 6v1.5M12 16.5V18"/></svg></span><h4>Finance</h4></div><img src="assets/teams/finance.JPG" alt="Finance team" loading="lazy" decoding="async"></article>
+        <article class="team-card c-sky"><div class="team-card-heading"><span class="team-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14zM11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span><h4>Marketing</h4></div><img src="assets/teams/marketing.JPG" alt="Marketing team" loading="lazy" decoding="async"></article>
+        <article class="team-card c-navy"><div class="team-card-heading"><span class="team-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><h4>Program</h4></div><img src="assets/teams/program.JPG" alt="Program team" loading="lazy" decoding="async"></article>
+        <article class="team-card c-pink"><div class="team-card-heading"><span class="team-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span><h4>Club Operations</h4></div><img src="assets/teams/club%20ops.JPG" alt="Club operations team" loading="lazy" decoding="async"></article>
+      </div>
+      <button class="carousel-control" id="teamNext" type="button" aria-label="Next teams" title="Next teams"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
     </div>
   </div>
 </section>
@@ -265,79 +294,13 @@
   </div>
 </section>
 
-<!-- TEAMS · Beijing -->
-<section class="sec" id="teams" aria-labelledby="teams-h">
-  <div class="wrap">
-    <div class="stop left">
-      <svg class="art" viewBox="0 0 160 190" aria-hidden="true">
-        <rect class="ground" x="6" y="178" width="148" height="8" rx="4"/>
-        <rect x="14" y="168" width="132" height="12" fill="#F8C9B5"/><rect x="28" y="158" width="104" height="12" fill="#F4E1D2"/><rect x="42" y="148" width="76" height="12" fill="#F8C9B5"/>
-        <rect x="56" y="114" width="48" height="36" fill="#E9735D"/>
-        <rect x="62" y="82" width="36" height="34" fill="#E9735D"/>
-        <rect x="68" y="56" width="24" height="30" fill="#E9735D"/>
-        <rect x="72" y="126" width="16" height="24" rx="8" fill="#B05A7A"/>
-        <path d="M28 120Q80 100 132 120L118 130H42z" fill="#F4CE3E" stroke="#C9A400" stroke-width="3" stroke-linejoin="round"/>
-        <path d="M40 90Q80 72 120 90L108 99H52z" fill="#F4CE3E" stroke="#C9A400" stroke-width="3" stroke-linejoin="round"/>
-        <path d="M52 62Q80 48 108 62L100 70H60z" fill="#F4CE3E" stroke="#C9A400" stroke-width="3" stroke-linejoin="round"/>
-        <path d="M80 50V30" stroke="#C9A400" stroke-width="3"/><circle cx="80" cy="27" r="5" fill="#E9735D"/>
-      </svg>
-      <div class="stop-tag">Stop 5<span>Beijing</span></div>
-    </div>
-
-    <div class="sec-head">
-      <h2 id="teams-h">Teams</h2>
-      <p>200+ mentors and organizers make the weekend run. Find the crew that fits you.</p>
-    </div>
-
-    <div class="teams">
-      <article class="team stamp c-pink"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Logistics</h3><p>Venue, schedule, and meals. Everything that keeps the weekend running smoothly.</p></article>
-      <article class="team stamp c-yellow"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M15 9.5c0-1-1.3-2-3-2s-3 .8-3 2 1.3 1.8 3 2 3 .8 3 2-1.3 2-3 2-3-1-3-2M12 6v1.5M12 16.5V18"/></svg></div><h3>Finance</h3><p>Manages our budget and funding so every dollar goes toward a great hacker experience.</p></article>
-      <article class="team stamp c-sky"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11l18-5v12L3 14z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div><h3>Marketing</h3><p>Runs our socials and outreach, and gets campus talking about InnovateHer.</p></article>
-      <article class="team stamp c-peach"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div><h3>Design</h3><p>Shapes the brand, the merch, and all the little details that make it feel like us.</p></article>
-      <article class="team stamp c-steel"><div class="ico"><svg viewBox="0 0 24 24"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg></div><h3>Development</h3><p>Builds our website, applications, and judging tools.</p></article>
-      <article class="team stamp c-navy"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h3>Program</h3><p>Plans the weekend’s schedule, workshops, tracks, and activities.</p></article>
-      <article class="team stamp c-pink"><div class="ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div><h3>Club Operations</h3><p>Keeps the club running all year: meetings, membership, and community events.</p></article>
-    </div>
-    <div class="teams-cta"><a class="btn" href="#apply">Join a team</a><p>Not sure where you fit? Apply and tell us what you like doing.</p></div>
-  </div>
-</section>
-
 <!-- SPONSORS · Paris -->
 <section class="sec" id="sponsors" aria-labelledby="sp-h">
   <div class="wrap">
-    <div class="stop right">
-      <svg class="art" viewBox="0 0 160 190" aria-hidden="true">
-        <rect class="ground" x="6" y="178" width="148" height="8" rx="4"/>
-        <path d="M80 6L85 44H96L104 92H120L138 180H113L103 148Q80 124 57 148L47 180H22L40 92H56L64 44H75z" fill="#B05A7A"/>
-        <rect x="53" y="88" width="54" height="8" rx="2" fill="#F4CE3E"/>
-        <rect x="62" y="40" width="36" height="7" rx="2" fill="#F4CE3E"/>
-        <path d="M62 104L98 142M98 104L62 142" stroke="#E4B9C7" stroke-width="3" fill="none"/>
-        <path d="M72 62L88 62M70 76L90 76" stroke="#E4B9C7" stroke-width="3"/>
-      </svg>
-      <div class="stop-tag">Stop 6<span>Paris</span></div>
-    </div>
-
     <div class="sec-head">
-      <h2 id="sp-h">Sponsors</h2>
-      <p>If you're a values-driven brand that wants to support women and marginalized communities in tech, we'd love to work with you.</p>
+      <h2 id="sp-h">Our sponsors</h2>
     </div>
 
-    <div class="why">
-      <article class="stamp c-steel"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg><h3>Visibility that matters</h3><p>Front and center company coverage across our platforms.</p></article>
-      <article class="stamp c-pink"><svg viewBox="0 0 24 24"><path d="M3 11l18-5v12L3 14z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><h3>Real engagement</h3><p>Host technical workshops, present company challenges, lead panels, and mentor.</p></article>
-      <article class="stamp c-yellow"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg><h3>Direct access to talent</h3><p>Connect with driven students from top technical programs.</p></article>
-    </div>
-
-    <h3 class="sub-h">In-kind sponsorships</h3>
-    <p class="sub-p">We welcome contributions that make InnovateHer fun, smooth, and unforgettable. Whether it’s snacks to keep hackers going, products to celebrate their wins, or tools to help them build, in-kind sponsors help us make this space shine. Or anything creative that aligns with our mission.</p>
-    <div class="inkind">
-      <div class="stamp c-steel"><svg viewBox="0 0 24 24"><path d="M6 3h12l-1.5 17a2 2 0 0 1-2 1.8H9.5a2 2 0 0 1-2-1.8z"/><path d="M6.4 8h11.2"/></svg>Food and drink<small>Meals, snacks, beverages</small></div>
-      <div class="stamp c-pink"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg>Hardware and tools<small>Headphones, VR, gear</small></div>
-      <div class="stamp c-peach"><svg viewBox="0 0 24 24"><path d="M8 3L3 6l2 4 3-1v12h8V9l3 1 2-4-5-3a4 4 0 0 1-8 0z"/></svg>Swag<small>Stickers, apparel, bottles, gadgets</small></div>
-      <div class="stamp c-sky"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M12 16v4M8 20h8M7 9l3 3 4-5"/></svg>Workshops<small>Skill-building resources</small></div>
-    </div>
-
-    <h3 class="sub-h">Our sponsors</h3>
     <div class="logos" aria-label="InnovateHer sponsors">
       <figure class="logo"><img src="assets/sponsors/badger.jpg" alt="Badger sponsor logo" loading="lazy" decoding="async"></figure>
       <figure class="logo"><img src="assets/sponsors/balsamiq.png" alt="Balsamiq sponsor logo" loading="lazy" decoding="async"></figure>
@@ -363,10 +326,6 @@
       <figure class="logo"><img src="assets/sponsors/stickers.png" alt="InnovateHer sponsor stickers" loading="lazy" decoding="async"></figure>
     </div>
 
-    <div class="sponsor-cta">
-      <div><h3>Ready to fly with us?</h3><p>Email us for the sponsorship packet and we’ll find the right way for you to get involved.</p></div>
-      <a class="btn on-dark" href="mailto:innovateherhacks@gmail.com?subject=InnovateHer%202027%20sponsorship">Email us</a>
-    </div>
   </div>
 </section>
 
@@ -406,9 +365,9 @@
         <div class="pass-bar" aria-hidden="true"></div>
       </div>
       <div class="pass-r">
-        <a class="app" href="#" data-soon="Hacker application link coming soon"><div><strong>Hacker</strong><span>Build something in a weekend</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg></a>
-        <a class="app" href="#" data-soon="Mentor application link coming soon"><div><strong>Mentor</strong><span>Help teams get unstuck</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg></a>
-        <a class="app" href="#" data-soon="Organizer application link coming soon"><div><strong>Organizer</strong><span>Join one of our teams</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg></a>
+        <a class="app" href="#" data-soon="Applications open November 16"><div><strong>Participant</strong><span>Build something in a weekend</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg></a>
+        <a class="app" href="#" data-soon="Applications open November 16"><div><strong>Mentor</strong><span>Help teams get unstuck</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg></a>
+        <a class="app" href="#" data-soon="Applications open November 16"><div><strong>Volunteer</strong><span>Help make the weekend happen</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5 1v-1.5L13 19v-5.5z"/></svg></a>
       </div>
     </div>
   </div>
