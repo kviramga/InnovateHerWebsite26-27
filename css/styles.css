@@ -281,7 +281,7 @@ main{position:relative;z-index:2}
 .polaroid:nth-child(7) .photo img{--face-zoom:1.8;--face-shift-y:-20%}
 .polaroid:nth-child(8) .photo img{--face-zoom:1.5;--face-shift-y:-30%}
 .polaroid:nth-child(9) .photo img{--face-zoom:1.65;--face-shift-y:-10%}
-.polaroid:nth-child(10) .photo img{--face-zoom:1.75;--face-shift-y:20%}
+.polaroid:nth-child(10) .photo img{--face-zoom:1.75;--face-shift-x:10%;--face-shift-y:25%}
 .polaroid:nth-child(11) .photo img{--face-zoom:1}
 .polaroid:nth-child(12) .photo img{--face-zoom:1.7;--face-shift-y:-20%}
 .polaroid figcaption{padding-top:.8rem;text-align:center}
