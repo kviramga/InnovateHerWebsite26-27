@@ -127,11 +127,11 @@
     var hr=hero.getBoundingClientRect();
     var sx=hr.left+hr.width/2-ox, sy=hr.bottom+window.scrollY-oy+2;
     var eleH=ele.offsetWidth*255/340;
+    var gutter=desk?46:(W<=760?52:84), inset=gutter+ele.offsetWidth/2;
     var secs=stopEls.map(function(s){
       var wr=s.closest('.wrap').getBoundingClientRect(), a=$('.art',s).getBoundingClientRect();
       var top=wr.top+window.scrollY-oy-6, bot=wr.bottom+window.scrollY-oy+eleH+12, pin=a.bottom+window.scrollY-oy-9;
-      var leftX=desk ? a.left+a.width/2-ox : (W<=760?52:84)-ele.offsetWidth/2;
-      var rightX=desk ? W-(a.left+a.width/2-ox) : W-((W<=760?52:84)+ele.offsetWidth/2);
+      var leftX=inset, rightX=W-inset;
       return {el:s, x:s.classList.contains('left')?rightX:leftX, top:top, bot:Math.max(bot,pin+40), pin:pin};
     });
 
@@ -159,7 +159,7 @@
     secs.forEach(function(sec,i){
       ride(sec);
       var n=secs[i+1]; if(!n) return;
-      if(!desk){ cross(pen.x<W/2?W-46:46,(pen.y+n.top)/2); }
+      cross(pen.x<W/2?W-inset:inset,(pen.y+n.top)/2);
       cross(n.x, n.top);
     });
 
