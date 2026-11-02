@@ -13,9 +13,10 @@
   $$('a[data-soon]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); say(a.getAttribute('data-soon')); }); });
 
   /* ---------- theme reveal ---------- */
-  var themeButton=$('#themeButton'), themeTitle=$('#themeTitle'), themeReveal=$('#themeReveal');
+  var themeButton=$('#themeButton'), themeTitle=$('#themeTitle'), themeSubtitle=$('#themeSubtitle'), themeReveal=$('#themeReveal');
   themeButton.addEventListener('click',function(){
     themeTitle.hidden=false;
+    themeSubtitle.hidden=false;
     themeReveal.classList.add('is-revealed');
     themeButton.setAttribute('aria-expanded','true');
     themeButton.textContent='Theme revealed';
