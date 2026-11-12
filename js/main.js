@@ -128,7 +128,7 @@
     var sx=hr.left+hr.width/2-ox, sy=hr.bottom+window.scrollY-oy+2;
     var eleH=ele.offsetWidth*255/340;
     var gutter=desk?46:(W<=760?52:84), inset=gutter+ele.offsetWidth/2;
-      var leftX=inset, rightX=W-inset;
+    var leftX=inset, rightX=W-inset;
     var secs=stopEls.map(function(s){
       var wr=s.closest('.wrap').getBoundingClientRect(), a=$('.art',s).getBoundingClientRect();
       var top=wr.top+window.scrollY-oy-6, bot=wr.bottom+window.scrollY-oy+eleH+12, pin=a.bottom+window.scrollY-oy-9;
@@ -138,10 +138,10 @@
 
     var d='M'+sx+' '+sy, pen={x:sx,y:sy};
     /* S-curve with vertical tangents: used only in the gaps between sections */
-    function cross(x,y){ var dy=y-pen.y; d+=' C'+pen.x+' '+(pen.y+dy*.5)+' '+x+' '+(y-dy*.5)+' '+x+' '+y; pen={x:x,y:y}; }
+    function cross(x,y){ var dy=y-pen.y; d+=' C'+pen.x+' '+(pen.y+dy*.7)+' '+x+' '+(y-dy*.7)+' '+x+' '+y; pen={x:x,y:y}; }
     /* wavy line down a margin, passing exactly through x at the landmark's pin */
     function ride(sec){
-      var A=desk?20:5, P=desk?380:300, ramp=130, ys=[], y;
+      var A=desk?14:4, P=desk?360:300, ramp=140, ys=[], y;
       for(y=sec.top;y<sec.bot;y+=24) ys.push(y);
       ys.push(sec.pin, sec.bot);
       ys.sort(function(p,q){return p-q}).filter(function(v,i,a){return !i||v-a[i-1]>1});
@@ -160,7 +160,6 @@
     secs.forEach(function(sec,i){
       ride(sec);
       var n=secs[i+1]; if(!n) return;
-      cross(pen.x<W/2?rightX:leftX,(pen.y+n.top)/2);
       cross(n.x, n.top);
     });
 
@@ -197,9 +196,13 @@
 
   function place(){
     if(!geo) return;
-    var P=baseP.getPointAtLength(cur), A=baseP.getPointAtLength(Math.max(0,cur-6)), B=baseP.getPointAtLength(Math.min(geo.total,cur+6));
+    var P=baseP.getPointAtLength(cur), A=baseP.getPointAtLength(Math.max(0,cur-80)), B=baseP.getPointAtLength(Math.min(geo.total,cur+80));
     var tx=B.x-A.x;
-    if(Math.abs(tx)>1) facing=(tx*lastMv>0)?1:-1;
+    // Only allow a direction flip if she is moving across a wide horizontal span (like a full screen crossover), 
+    // otherwise preserve her current facing direction completely!
+    if(Math.abs(tx) > 25) {
+      facing = tx > 0 ? 1 : -1;
+    }
     var w=ele.offsetWidth, h=w*255/340;
     ele.style.transform='translate('+(P.x-w/2)+'px,'+(P.y-h+7)+'px)';
     eleFlip.style.transform='scaleX('+facing+')';
@@ -215,10 +218,10 @@
   function frame(){
     raf=0;
     var diff=tgt-cur;
-    if(reduce.matches || Math.abs(diff)<.4){ cur=tgt; }
-    else { cur+=diff*.14; }
+    if(reduce.matches || Math.abs(diff)<0.2){ cur=tgt; }
+    else { cur+=diff*0.09; }
     place();
-    if(Math.abs(tgt-cur)>.4){ ele.classList.add('walking'); raf=requestAnimationFrame(frame); }
+    if(Math.abs(tgt-cur)>0.2){ ele.classList.add('walking'); raf=requestAnimationFrame(frame); }
     else { ele.classList.remove('walking'); }
   }
   eleBob.addEventListener('animationend',function(){ eleBob.classList.remove('hop'); });
