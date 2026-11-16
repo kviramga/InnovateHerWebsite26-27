@@ -14,12 +14,77 @@
 
   /* ---------- theme reveal ---------- */
   var themeButton=$('#themeButton'), themeTitle=$('#themeTitle'), themeSubtitle=$('#themeSubtitle'), themeReveal=$('#themeReveal');
-  themeButton.addEventListener('click',function(){
+  var themeFx=$('#themeFx'), themeAnnounce=$('#themeAnnounce');
+  var FX_COLORS=['#F4CE3E','#E9735D','#E4B9C7','#C5D9EF','#FEF6E5','#B05A7A'];
+  var themeStarted=false;
+
+  // split the theme word into letters so they can drop in one by one
+  var themeWord=themeTitle.textContent.trim();
+  themeTitle.setAttribute('aria-label',themeWord);
+  themeTitle.innerHTML='';
+  themeWord.split('').forEach(function(ch,i){
+    var s=document.createElement('span');
+    s.className='theme-letter'; s.style.setProperty('--i',i); s.setAttribute('aria-hidden','true');
+    s.textContent=ch===' '?'\u00A0':ch;
+    themeTitle.appendChild(s);
+  });
+
+  function rand(a,b){return a+Math.random()*(b-a)}
+  function pick(list){return list[Math.floor(Math.random()*list.length)]}
+  function addFx(el,life){ themeFx.appendChild(el); setTimeout(function(){ if(el.parentNode) el.parentNode.removeChild(el); },life); }
+
+  function firework(x,y){
+    var fw=document.createElement('div'), color=pick(FX_COLORS), n=22;
+    fw.className='firework'; fw.style.left=x+'%'; fw.style.top=y+'%';
+    for(var i=0;i<n;i++){
+      var p=document.createElement('i');
+      p.style.setProperty('--a',(360/n*i)+'deg');
+      p.style.setProperty('--d',rand(60,130)+'px');
+      p.style.setProperty('--c',Math.random()<.7?color:pick(FX_COLORS));
+      fw.appendChild(p);
+    }
+    addFx(fw,1500);
+  }
+  function confetti(count){
+    for(var i=0;i<count;i++){
+      var c=document.createElement('span'), t=rand(2.2,3.8), delay=rand(0,.8);
+      c.className='confetti';
+      c.style.left=rand(0,100)+'%';
+      c.style.setProperty('--c',pick(FX_COLORS));
+      c.style.setProperty('--x',rand(-120,120)+'px');
+      c.style.setProperty('--r',rand(-720,720)+'deg');
+      c.style.setProperty('--t',t+'s');
+      c.style.setProperty('--delay',delay+'s');
+      addFx(c,(t+delay)*1000+100);
+    }
+  }
+  function showTheme(){
+    themeReveal.classList.remove('is-charging');
     themeTitle.hidden=false;
     themeSubtitle.hidden=false;
     themeReveal.classList.add('is-revealed');
-    themeButton.setAttribute('aria-expanded','true');
     themeButton.hidden=true;
+    themeAnnounce.textContent='The InnovateHer 2027 theme is '+themeWord+'. '+themeSubtitle.textContent;
+  }
+
+  themeButton.addEventListener('click',function(){
+    if(themeStarted) return;
+    themeStarted=true;
+    themeButton.disabled=true;
+    themeButton.setAttribute('aria-expanded','true');
+
+    if(reduce.matches){ showTheme(); return; }   // no big animation for people who turned motion off
+
+    themeReveal.classList.add('is-charging');
+    setTimeout(function(){          // short charge-up, then BOOM
+      var flash=document.createElement('div'); flash.className='theme-flash';
+      addFx(flash,1000);
+      showTheme();
+      confetti(70);
+      [[22,22,300],[78,18,650],[50,12,1000],[32,30,1400],[68,28,1750],[15,15,2300],[85,24,2600]].forEach(function(f){
+        setTimeout(function(){ firework(f[0],f[1]); },f[2]);
+      });
+    },0);
   });
 
   /* ---------- team carousel ---------- */
