@@ -232,10 +232,12 @@
   }
   window.addEventListener('scroll',onScroll,{passive:true});
 
-  var rb=0; function rebuild(){ cancelAnimationFrame(rb); rb=requestAnimationFrame(build); }
-  window.addEventListener('resize',rebuild);
-  window.addEventListener('load',rebuild);
-  if(document.fonts && document.fonts.ready) document.fonts.ready.then(rebuild);
-  if('ResizeObserver' in window) new ResizeObserver(rebuild).observe(document.body);
-  build();
+var rb=0, rbT=0;
+function rebuild(){ cancelAnimationFrame(rb); rb=requestAnimationFrame(build); }
+function rebuildSoon(){ clearTimeout(rbT); rbT=setTimeout(rebuild,200); }
+window.addEventListener('resize',rebuildSoon);
+window.addEventListener('load',rebuild);
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(rebuild);
+if('ResizeObserver' in window) new ResizeObserver(rebuildSoon).observe(document.body);
+build();
 })();
